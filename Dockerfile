@@ -1,6 +1,7 @@
 FROM ubuntu:bionic
 COPY *.deb /tmp/
-COPY decrypt.sh /
+COPY decryptByDbImeiUin.sh /
+COPY decryptByDbKey.sh /
 
 RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/' /etc/apt/sources.list \
     && apt-get update \
