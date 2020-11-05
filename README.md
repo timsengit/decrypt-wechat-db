@@ -16,6 +16,8 @@ adb pull /storage/emulated/0/wx/decompile/96761036/MicroMsgCopy/EnMicroMsg.db ./
 docker run --rm -v `pwd`:/tmp timcngsen/decrypt-wechat-db /decryptByDbImeiUin.sh /tmp/EnMicroMsg.db $imei $uin
 
 docker run --rm -v `pwd`:/tmp timcngsen/decrypt-wechat-db /decryptByDbKey.sh /tmp/EnMicroMsg.db $key
+
+chown `whoami`:`whoami` decrypted_database.db
 ```
 
 __decrypted_database.db__ will generated at current dir.
